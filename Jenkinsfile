@@ -29,8 +29,8 @@ pipeline {
                     site: 'lohan-petermann.atlassian.net', // Nome do site Jira configurado no Jenkins
                     environmentId: 'main', // ID único do ambiente
                     environmentName: 'JIRA-1', // Nome do ambiente no Jira
-                    environmentType: 'production' // Tipo do ambiente (production, staging, testing, etc.)
-                    serviceIds: ['service-1'] // IDs de serviço relevantes
+                    environmentType: 'production', // Tipo do ambiente (production, staging, testing, etc.)
+                    serviceIds: ['service-1'] // IDs de servico relevantes
                 )
             }
         }
