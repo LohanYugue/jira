@@ -12,6 +12,11 @@ pipeline {
     post {
         always {
             script {
+                def jiraKeys = jiraIssueKeyExtractor.extractFromChangeLog()
+                echo "Found Jira issue keys: ${jiraKeys}"
+            }
+
+            script {
                 // Envia informações do build para o Jira
                 jiraSendBuildInfo(
                     site: 'lohan-petermann.atlassian.net' // Nome do site Jira configurado no Jenkins
@@ -25,6 +30,7 @@ pipeline {
                     environmentId: 'main', // ID único do ambiente
                     environmentName: 'JIRA-1', // Nome do ambiente no Jira
                     environmentType: 'production' // Tipo do ambiente (production, staging, testing, etc.)
+                    serviceIds: ['service-1'] // IDs de serviço relevantes
                 )
             }
         }
