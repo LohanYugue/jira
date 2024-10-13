@@ -11,10 +11,6 @@ pipeline {
 
     post {
         always {
-            // script {
-            //     def jiraKeys = jiraIssueKeyExtractor.extractFromChangeLog()
-            //     echo "Found Jira issue keys: ${jiraKeys}"
-            // }
 
             script {
                 // Envia informações do build para o Jira
